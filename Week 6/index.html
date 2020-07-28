@@ -29,16 +29,16 @@ For the machine building assignment, I created an app through MIT's app inventor
 
 <p> Here is the code that was uploaded on Arduino IDE. <p>
 	
-	<p> const int trigPin = 3; const int echoPin = 2; long duration, cm;<p>
+	const int trigPin = 3; const int echoPin = 2; long duration, cm;
 
-<p> void setup() { <p>
- <p> Serial.begin(9600);  pinMode(trigPin, OUTPUT);  pinMode(echoPin, INPUT);
-} <p>
+ void setup() { 
+  Serial.begin(9600);  pinMode(trigPin, OUTPUT);  pinMode(echoPin, INPUT);
+} 
 
-<p> void loop() 
-{ <p>
- <p> HIGH pulse: <p> 
- <p> digitalWrite(trigPin, LOW); <p>
+ void loop() 
+{ 
+  HIGH pulse: 
+ digitalWrite(trigPin, LOW); 
   delayMicroseconds(2);  
   digitalWrite(trigPin, HIGH);  
   delayMicroseconds(10);  
