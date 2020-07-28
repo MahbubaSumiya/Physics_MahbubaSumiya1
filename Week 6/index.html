@@ -29,17 +29,16 @@ For the machine building assignment, I created an app through MIT's app inventor
 
 <p> Here is the code that was uploaded on Arduino IDE. <p>
 	
-	<p> const int trigPin = 3; const int echoPin = 2; long duration, cm;
+	<p> const int trigPin = 3; const int echoPin = 2; long duration, cm;<p>
 
-void setup() {
-  // initialize serial communication with HC-06:
-  Serial.begin(9600);  pinMode(trigPin, OUTPUT);  pinMode(echoPin, INPUT);
-}
+<p> void setup() { <p>
+ <p> Serial.begin(9600);  pinMode(trigPin, OUTPUT);  pinMode(echoPin, INPUT);
+} <p>
 
-void loop()
-{
-  // The sensor is triggered by a HIGH pulse of 10 or more microseconds. // Give a short LOW pulse beforehand to ensure a clean HIGH pulse:  
-  digitalWrite(trigPin, LOW); 
+<p> void loop() 
+{ <p>
+ <p> HIGH pulse: <p> 
+ <p> digitalWrite(trigPin, LOW); <p>
   delayMicroseconds(2);  
   digitalWrite(trigPin, HIGH);  
   delayMicroseconds(10);  
