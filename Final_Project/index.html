@@ -203,6 +203,29 @@ Serial.println(distance);
 
 </code></pre>
 
+<p style="font-size:30px">The buzzer is controlled with the code on the bottom: </p>
+
+<pre><code>
+const int buzzer = 11;
+
+void setup() {
+pinMode(buzzer, OUTPUT);
+
+void loop() {
+
+  Serial.println("buzz");
+
+tone(buzzer, 300, 1000);
+  
+  
+
+}
+else{
+  noTone(buzzer);
+ 
+}
+</code></pre>
+
 
 
 <article>
