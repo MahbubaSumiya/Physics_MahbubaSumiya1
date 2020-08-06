@@ -166,6 +166,45 @@ delay(500);
 
 </code></pre>
 
+<p style="font-size:30px">The ultrasonic sensor is controlled with the code on the bottom: </p>
+<pre><code>
+const int trigPin = 9;
+const int echoPin = 10;
+
+long duration;
+int distance;
+int safetyDistance;
+
+void setup() {
+pinMode(trigPin, OUTPUT); 
+pinMode(echoPin, INPUT); 
+Serial.begin(9600); 
+}
+void loop() {
+digitalWrite(trigPin, LOW);
+delayMicroseconds(2);
+digitalWrite(trigPin, HIGH);
+delayMicroseconds(10);
+digitalWrite(trigPin, LOW);
+
+
+duration = pulseIn(echoPin, HIGH);
+
+// Calculating  distance
+distance= duration*0.034/2;
+
+safetyDistance = distance;
+if (safetyDistance <= 100)
+{
+Serial.println(distance);
+  Serial.println("distance");
+
+}
+
+</code></pre>
+
+
+
 <article>
     <h1>London</h1>
     <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
