@@ -133,12 +133,37 @@ The ultrasonic sensor is allowing me to monitor any obstacles upfront. This sens
 The servo motor attached at the bottom of the model is rotating 180 degrees. The intention of using the sponge is to clean any dusts on the surface. 
 
 (Visualization is provided in the video)
-</p>
+
+<header>
+  <h2>The breakdowns of the different elements of the project</h2>
+</header>
+
+<html>
+<body>
+
+<p style="font-size:30px">The servo motor is controlled with the code on the bottom: </p>
 <pre><code>
-void loop(){
-  int i = 2;
-  int j = 3;
+// Include the Servo library 
+#include <Servo.h> 
+
+Servo servo;
+
+void setup() {
+
+  servo.attach(9);
+
+  
 }
+
+void loop() {
+
+servo.write(0);
+delay(3000);
+servo.write(300);
+delay(500);
+
+}
+
 </code></pre>
 
 <article>
