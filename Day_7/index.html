@@ -44,7 +44,49 @@
 
           <img src="IMG-2303.jpg" class="img-responsive margin" style="width:100%" alt="Sew">
 
-          
+
+</code></pre>
+
+<p style="font-size:30px">Here is the code:  </p>
+<pre><code>
+
+#include <CapacitiveSensor.h>
+
+CapacitiveSensor Sensor = CapacitiveSensor(7,5);  //7 is charge pin.  5 is sense pin.
+long val;
+int pos;
+#define led A0
+
+void setup()
+{
+Serial.begin(9600);
+pinMode(led, OUTPUT);
+}
+
+void loop()
+{
+
+val = Sensor.capacitiveSensor(30);
+Serial.println(val);
+if (val >= 1000 && pos == 0)
+{
+digitalWrite(led, HIGH);
+pos = 1;
+delay(500);
+}
+
+else if (val >= 1000 && pos == 1)
+{
+digitalWrite(led, LOW);
+pos = 0;
+delay(500);
+}
+
+delay(10);
+}
+
+
+  </code></pre>
 
         
       </div>
