@@ -23,7 +23,49 @@
 
         <img src="IMG_2306.jpg" class="img-responsive margin" style="width:100%" alt="Sew">
 
-       <p> Here is the code that was uploaded: </p>  
+        <p style="font-size:30px">Here is the code that was uploaded: </p>
+<pre><code>
+#include<Servo.h>
+#define echoPin 4
+#define trigPin 5
+Servo servo;
+int pos;
+int long duration;
+int distance;
+
+void setup(){ 
+servo.attach(3);
+pinMode(echoPin,INPUT);
+pinMode(trigPin,OUTPUT);
+}
+
+void loop()
+{
+digitalWrite(trigPin,LOW);
+delayMicroseconds(2); 
+digitalWrite(trigPin,HIGH);
+delayMicroseconds(10); 
+digitalWrite(trigPin,LOW);
+duration=pulseIn(echoPin,HIGH);
+distance=(duration*0.034/2);
+  
+  if(distance<=80){
+    for(pos=180;pos>=0;pos--){
+      servo.write(pos);
+      delay(111.1);
+    }
+    
+}
+  else{
+      servo.write(180);
+  }
+  delay(200);
+
+}
+
+</code></pre>
+
+      
 
 
        <p> For my end of the course final project, I hope to create a mini robot that can climb and still be able to balance on window to clean dirts. As of now, I'm still a beginner in programming, but I willing to learn as I'm going through the Intro to Digital Fabrication course and creating the final project. My hope is that by the end of this course, I'm able to program on Arduino IDE more comfortably and happy with my final product. <p>
